@@ -73,10 +73,17 @@ st.graphviz_chart(dot)
 
 # Visualizar un html en streamlit
 st.write('''
-    ## Transcripciones
+    ## Nube de palabras con las transcripciones realizadas
     ''')
 
+# Agregar los gráficos de Voyant
+voyant = Image.open('nube_50.jpg')
+col1.image(voyant, use_container_width=True)
 
+# Visualizar un html en streamlit
+st.write('''
+    ## Transcripciones
+    ''')
 # Download the image from the URL
 url_image = 'https://drive.google.com/uc?export=download&id=1vBfdh2B8bwDfV9IlpErEgQ-9IZy7xS0z'
 response = requests.get(url_image)
