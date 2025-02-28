@@ -76,10 +76,11 @@ st.write('''
     ## Nube de palabras con las transcripciones realizadas
     ''')
 
-
 # Agregar los gráficos de Voyant
 voyant = Image.open('nube_50.jpg')
 st.image(voyant, use_container_width=True)
+
+st.link_button("Vamos a Voyant", "https://voyant-tools.org/?corpus=9efe3bd682773679efe0b026e8218603")
 
 # Visualizar un html en streamlit
 st.write('''
