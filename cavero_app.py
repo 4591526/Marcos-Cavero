@@ -1,11 +1,11 @@
 # Cargar las librerias necesarias
-import streamlit as st
-import pandas as pd
-import graphviz
-import xml.etree.ElementTree as ET
-from PIL import Image
-import requests
-from io import BytesIO
+import streamlit as st #permite generar una aplicación web interactiva
+import pandas as pd # trabajar con df ya sea excel o csv
+import graphviz # librería que permite realizar diagramas y árboles
+import xml.etree.ElementTree as ET # permite trabajar con xml
+from PIL import Image # trabajar con imágenes
+import requests # permite realizar tareas como abrir archivos en la red
+from io import BytesIO # permite trabajar con archivos web 
 
 
 st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de Marcos Cavero</h1>', unsafe_allow_html=True)
@@ -85,6 +85,11 @@ st.image(voyant, use_container_width=True)
 st.write('''
     ## Transcripciones
     ''')
+
+## Visualizador html (iamgen + xml)
+## Tomar todas imágenes del drive y tomar los archivos txt
+## generar un selectbox en cual si uno selecciona el nombre de un archivo o tópicos pueda acceder a la imagen junto con la transcripción
+
 # Download the image from the URL
 url_image = 'https://drive.google.com/uc?export=download&id=1vBfdh2B8bwDfV9IlpErEgQ-9IZy7xS0z'
 response = requests.get(url_image)
