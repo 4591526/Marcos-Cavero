@@ -47,7 +47,7 @@ with dot.subgraph() as s:
     s.node('G6', 'Nicolasa de Valdiviezo')
 with dot.subgraph() as s:
     s.attr(rank='same')    
-    s.node('G7', 'Pedro Cavero de Frnancia Vázquez de Acuña')
+    s.node('G7', 'Pedro Cavero de Francia Vázquez de Acuña')
     s.node('G8', 'Luisa Nuñez')
 
 with dot.subgraph() as s:
