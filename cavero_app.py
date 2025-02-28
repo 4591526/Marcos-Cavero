@@ -82,7 +82,7 @@ image = Image.open(BytesIO(response.content))
 st.image(image, caption='Digitalización', use_container_width=True)
 
 # Leer el contenido del archivo de texto desde la URL
-url_text = 'https://drive.google.com/uc?export=download&id=1dO1j2Sn80s88WyyW8xHDwSFKAiGHBAZN'
+url_text = 'https://drive.google.com/drive/folders/1ofyZVcpcbfvtsCwKlHBLR3k0Wv_j11NN'
 response = requests.get(url_text)
 content = response.text
 
