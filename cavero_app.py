@@ -4,6 +4,8 @@ import pandas as pd
 import graphviz
 import xml.etree.ElementTree as ET
 from PIL import Image
+import requests
+from io import BytesIO
 
 
 st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de Cavero</h1>', unsafe_allow_html=True)
@@ -72,10 +74,12 @@ st.write('''
     ''')
 
 
-image = Image.open('evt/data/images/single/cavero_15.jpg')
+# Download the image from the URL
+url = 'https://drive.google.com/uc?export=download&id=1vBfdh2B8bwDfV9IlpErEgQ-9IZy7xS0z'
+response = requests.get(url)
+image = Image.open(BytesIO(response.content))
+
 st.image(image, caption='Digitalización', use_container_width=True)
-
-
 with open('Luisa1.txt', 'r', encoding='utf-8') as file:
     luisa1_content = file.read()
 
