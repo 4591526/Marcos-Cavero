@@ -12,7 +12,7 @@ st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de
 
 # Crear un family tree con graphviz 
 st.write('''
-    ## Árbol genealógico: Familia ...
+    ## Los escudos familiares ...
     ''')
 
 # Crear columnas para presentar escudos
@@ -23,6 +23,11 @@ col1.image(escudo1, use_container_width=True)
 
 escudo1 = Image.open('escudo1.jpg')
 col2.image(escudo1, use_container_width=True)
+
+# Crear un family tree con graphviz 
+st.write('''
+    ## Árbol genealógico: Familia ...
+    ''')
 
 # Crear un grafo con graphviz
 dot = graphviz.Digraph()
