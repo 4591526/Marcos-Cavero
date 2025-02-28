@@ -10,20 +10,9 @@ from io import BytesIO
 
 st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de Marcos Cavero</h1>', unsafe_allow_html=True)
 
-# Crear tres columnas, la del medio contendrá la imagen para centrarla
-col1, col2 = st.columns([1, 1])
-
-col1 = st.write('''
-    ¿Quién es Cavero?
-             
-          ''')
-
-col2 = st.empty()
-    #st.image(nombre,  width=300, use_container_width=True)
-
 # Crear un family tree con graphviz 
 st.write('''
-    ## Family Tree
+    ## Árbol genealógico: Familia ...
     ''')
 
 # Crear un grafo con graphviz
@@ -47,22 +36,19 @@ with dot.subgraph() as s:
     s.node('G7', 'Pedro Cavero de Frnancia Vázquez de Acuña')
     s.node('G8', 'Luisa Nuñez')
 
-# Conectar los nodos padres a los abuelos
+with dot.subgraph() as s:
+    s.attr(rank='same')    
+    s.node('G9', 'Mercedes Cavero Vazquez de Acuña Isasaga Valdiviezo y Nuñez')
+
+# Conectar los nodos padres a hijos
 dot.edge('G1', 'G3')
+dot.edge('G2', 'G3')
 dot.edge('G3', 'G5')
-dot.edge('G5', 'G')
-
-dot.node('C', 'Cavero')
-dot.node('D', 'Hermano 1')
-dot.node('E', 'Hermano 2')
-
-# Conectar los nodos hijos al grupo de padres
-dot.edge('A', 'C')
-dot.edge('B', 'C')
-dot.edge('A', 'D')
-dot.edge('B', 'D')
-dot.edge('A', 'E')
-dot.edge('B', 'E')
+dot.edge('G4', 'G5')
+dot.edge('G5', 'G7')
+dot.edge('G6', 'G7')
+dot.edge('G7', 'G9')
+dot.edge('G8', 'G9')
 
 st.graphviz_chart(dot)
 
