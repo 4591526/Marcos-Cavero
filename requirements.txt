@@ -1,0 +1,4 @@
+pandas
+graphviz
+Pillow
+requests
