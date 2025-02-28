@@ -92,9 +92,35 @@ image = Image.open(BytesIO(response.content))
 
 st.image(image, caption='Digitalización', use_container_width=True)
 
-# Leer el contenido del archivo de texto desde la carpeta local
-file_path = 'transcripciones/EAP1495_FDL-0438-IT001_002.txt'
-with open(file_path, 'r', encoding='utf-8') as file:
-    content = file.read()
+# Agregar el txt de la digitalización 
+st.write('''
+    CCLX.
+    Emito: El 30 de No-
+    viembre de 1539 erige Francisco
+    Pizarro la Gobernación de Quito
+    que Comprendia esta provincia,
+    los territorios de Pasto y Po-
+    payán y de todo cuanto más
+    se discubriese al oriente de
+    la Cordillera de estas regiones,
+    y nombra hora servirla á su
+    hermano Gonzalo Pizarro
+    La Republica dominicana
+    ó de Santo Domingo se inde-
+    pendizó de España el 30 de
+    Noviembre de 1821
+    El Ferrocarril de Lima á
+    Chorrillos se entregó al tráfico
+    publico el 30 de Nobre de 1858
+    Oyanguren en of. 33 acusaba recibo de
+    los manifiestos de julio, pero se olvida
+    de qe las tiene y en inalavibr ama, de 13 de
+    Novbre. los reclama, Quitio.
+''')
 
-st.text(content)
+# Leer el contenido del archivo de texto desde la carpeta local
+#file_path = 'transcripciones/EAP1495_FDL-0438-IT001_002.txt'
+#with open(file_path, 'r', encoding='utf-8') as file:
+    #content = file.read()
+
+#st.text(content)
