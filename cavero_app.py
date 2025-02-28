@@ -81,9 +81,9 @@ image = Image.open(BytesIO(response.content))
 
 st.image(image, caption='Digitalización', use_container_width=True)
 
-# Leer el contenido del archivo de texto desde la URL
-url_text = 'transcripciones/EAP1495_FDL-0438-IT001_002.txt'
-response = requests.get(url_text)
-content = response.text
+# Leer el contenido del archivo de texto desde la carpeta local
+file_path = 'transcripciones/EAP1495_FDL-0438-IT001_002.txt'
+with open(file_path, 'r', encoding='utf-8') as file:
+    content = file.read()
 
 st.text(content)
