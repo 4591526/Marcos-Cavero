@@ -29,25 +29,28 @@ st.write('''
 # Crear un grafo con graphviz
 dot = graphviz.Digraph()
 
-# Agrupar los nodos abuelos
+# Agrupar los nodos de los ancestros
 with dot.subgraph() as s:
     s.attr(rank='same')
-    s.node('G1', 'Abuelo Paterno')
-    s.node('G2', 'Abuela Paterna')
-    s.node('G3', 'Abuelo Materno')
-    s.node('G4', 'Abuela Materna')
-
-# Agrupar los nodos padres
+    s.node('G1', 'Gregorio Laureano Cavero de Céspedes')
+    s.node('G2', 'Rosa María Vasquez de Acuña Iturguyen Amasa')
 with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node('A', 'Padre de Cavero')
-    s.node('B', 'Madre de Cavero')
+    s.attr(rank='same')    
+    s.node('G3', 'Ignacio Cavero Vásquez de Acuña')
+    s.node('G4', 'Micaela de Tagle e Isásaga')
+with dot.subgraph() as s:
+    s.attr(rank='same')    
+    s.node('G5', 'Ignacio Cavero Vásquez de Acuña (Tagle)')
+    s.node('G6', 'Nicolasa de Valdiviezo')
+with dot.subgraph() as s:
+    s.attr(rank='same')    
+    s.node('G7', 'Pedro Cavero de Frnancia Vázquez de Acuña')
+    s.node('G8', 'Luisa Nuñez')
 
 # Conectar los nodos padres a los abuelos
-dot.edge('G1', 'A')
-dot.edge('G2', 'A')
-dot.edge('G3', 'B')
-dot.edge('G4', 'B')
+dot.edge('G1', 'G3')
+dot.edge('G3', 'G5')
+dot.edge('G5', 'G')
 
 dot.node('C', 'Cavero')
 dot.node('D', 'Hermano 1')
