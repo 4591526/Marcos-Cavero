@@ -19,10 +19,10 @@ st.write('''
 col1, col2= st.columns([1, 1])
 
 escudo1 = Image.open('escudo_familia_torre_tagle.jpg')
-col1.image(escudo1, use_column_width=True)
+col1.image(escudo1, use_container_width=True)
 
 escudo1 = Image.open('escudo1.jpg')
-col2.image(escudo1, use_column_width=True)
+col2.image(escudo1, use_container_width=True)
 
 # Crear un grafo con graphviz
 dot = graphviz.Digraph()
