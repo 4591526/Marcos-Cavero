@@ -78,11 +78,10 @@ st.write('''
 url_image = 'https://drive.google.com/uc?export=download&id=1vBfdh2B8bwDfV9IlpErEgQ-9IZy7xS0z'
 response = requests.get(url_image)
 image = Image.open(BytesIO(response.content))
-
 st.image(image, caption='Digitalización', use_container_width=True)
 
 # Descargar el archivo desde Google Drive
-url_text = 'https://drive.google.com/uc?export=download&id=1dO1j2Sn80s88WyyW8xHDwSFKAiGHBAZN'
+url_text = 'https://drive.google.com/file/d/1dO1j2Sn80s88WyyW8xHDwSFKAiGHBAZN/view?usp=drive_link'
 output = 'EAP1495_FDL-0438-IT001_002.txt'
 gdown.download(url_text, output, quiet=False)
 
