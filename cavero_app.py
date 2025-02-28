@@ -121,7 +121,7 @@ st.write('''
     Oyanguren en of. 33 acusaba recibo de \\
     los manifiestos de julio, pero se olvida \\
     de qe las tiene y en inalavibr ama, de 13 de \\
-    Novbre. los reclama, Quitio. \\
+    Novbre. los reclama, Quitio. 
 ''')
 
 # Leer el contenido del archivo de texto desde la carpeta local
