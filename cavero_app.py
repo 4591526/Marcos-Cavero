@@ -6,9 +6,9 @@ import xml.etree.ElementTree as ET
 from PIL import Image
 import requests
 from io import BytesIO
+import gdown
 
-
-st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de Cavero</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de Marcos Cavero</h1>', unsafe_allow_html=True)
 
 # Crear tres columnas, la del medio contendrá la imagen para centrarla
 col1, col2 = st.columns([1, 1])
@@ -80,7 +80,14 @@ response = requests.get(url)
 image = Image.open(BytesIO(response.content))
 
 st.image(image, caption='Digitalización', use_container_width=True)
-with open('Luisa1.txt', 'r', encoding='utf-8') as file:
-    luisa1_content = file.read()
 
-st.text(luisa1_content)
+# Descargar el archivo desde Google Drive
+file_url = 'https://drive.google.com/uc?export=download&id=1dO1j2Sn80s88WyyW8xHDwSFKAiGHBAZN'
+output = 'EAP1495_FDL-0438-IT001_002.txt'
+gdown.download(file_url, output, quiet=False)
+
+# Leer el contenido del archivo descargado
+with open(output, 'r', encoding='utf-8') as file:
+    content = file.read()
+
+st.text(content)
