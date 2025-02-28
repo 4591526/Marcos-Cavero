@@ -100,7 +100,7 @@ st.image(image, caption='Digitalización', use_container_width=True)
 
 # Agregar el txt de la digitalización 
 st.write('''
-    CCLX.
+    CCLX. \\
     Emito: El 30 de No-
     viembre de 1539 erige Francisco
     Pizarro la Gobernación de Quito
