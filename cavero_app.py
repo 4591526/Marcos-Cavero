@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image
 import requests
 from io import BytesIO
-import gdown
+
 
 st.markdown(f'<h1 style="font-size: 42px; text-align: center; ">Los cuadernos de Marcos Cavero</h1>', unsafe_allow_html=True)
 
@@ -78,15 +78,12 @@ st.write('''
 url_image = 'https://drive.google.com/uc?export=download&id=1vBfdh2B8bwDfV9IlpErEgQ-9IZy7xS0z'
 response = requests.get(url_image)
 image = Image.open(BytesIO(response.content))
+
 st.image(image, caption='Digitalización', use_container_width=True)
 
-# Descargar el archivo desde Google Drive
-url_text = 'https://drive.google.com/file/d/1dO1j2Sn80s88WyyW8xHDwSFKAiGHBAZN/view?usp=drive_link'
-output = 'EAP1495_FDL-0438-IT001_002.txt'
-gdown.download(url_text, output, quiet=False)
-
-# Leer el contenido del archivo descargado
-with open(output, 'r', encoding='utf-8') as file:
-    content = file.read()
+# Leer el contenido del archivo de texto desde la URL
+url_text = 'https://drive.google.com/uc?export=download&id=1dO1j2Sn80s88WyyW8xHDwSFKAiGHBAZN'
+response = requests.get(url_text)
+content = response.text
 
 st.text(content)
